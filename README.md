@@ -55,7 +55,7 @@ A GymBro diferencia-se ao combinar ofertas com aprovação, suporte a grupos, us
   - BD: PostgreSQL com scripts (create.sql, populate.sql, queries.sql).
   - Ferramentas: GitHub, ClickUp, Figma, Discord.
 - **Arquitetura Proposta**: Cliente-servidor com API REST conectando app e BD.
-- **Mockups e Interfaces**: [Insira aqui imagens exportadas do Figma ou link: ex. [Figma Mockups](URL)]. Inclui telas de perfil, matching, botão "+", feed de ofertas e gestão de candidaturas.
+- **Mockups e Interfaces**: 
 
 ## 9. Planeamento e Calendarização
 - **Plano de Trabalhos**: 
@@ -63,7 +63,7 @@ A GymBro diferencia-se ao combinar ofertas com aprovação, suporte a grupos, us
   - Semana 2-5 (29/09-26/10): Desenvolvimento do protótipo (app, backend, BD).
   - Semana 6-11 (27/10-09/11): Refinamento e 2ª entrega.
   - Semana 12-14 (10/11-14/12): Versão final e 3ª entrega.
-- **Gráfico de Gantt**: [Insira aqui o gráfico exportado do ClickUp/Excel ou link].
+- **Gráfico de Gantt**:
 - **Metodologia**: Ágil, com sprints semanais e revisões no ClickUp.
 
 ## 10. Conclusão
