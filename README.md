@@ -50,9 +50,10 @@ A GymBro diferencia-se ao combinar ofertas com aprovação, suporte a grupos, us
   - **Competências Comunicacionais**: Relatórios, poster e vídeo.
   - **Matemática Discreta**: Análise de compatibilidade em matching.
 - **Requisitos Técnicos**:
-  - Frontend: Android Studio (versão Koala/Narwhal), Kotlin, Jetpack Compose.
+  - Frontend: Android Studio com Kotlin.
   - Backend: Spring Boot com arquitetura MVC e REST.
-  - BD: PostgreSQL com scripts (create.sql, populate.sql, queries.sql).
+  - BD: MySql.
+  
   - Ferramentas: GitHub, ClickUp, Figma, Discord.
 - **Arquitetura Proposta**: Cliente-servidor com API REST conectando app e BD.
 - **Mockups e Interfaces**: 
@@ -64,13 +65,10 @@ A GymBro diferencia-se ao combinar ofertas com aprovação, suporte a grupos, us
   - Semana 6-11 (27/10-09/11): Refinamento e 2ª entrega.
   - Semana 12-14 (10/11-14/12): Versão final e 3ª entrega.
 - **Gráfico de Gantt**:
-- **Metodologia**: Ágil, com sprints semanais e revisões no ClickUp.
+- **Metodologia**: 
 
 ## 10. Conclusão
 O projeto GymBro visa criar uma solução inovadora para motivar treinos sociais, com entregas progressivas até dezembro de 2025. Os próximos passos incluem validar o protótipo e expandir funcionalidades como chat e notificações.
 
 ## 11. Bibliografia
-- Documentação oficial Kotlin: [kotlinlang.org](https://kotlinlang.org)
-- Guia Spring Boot: [spring.io](https://spring.io)
-- Tutoriais Android: [developer.android.com](https://developer.android.com)
 
