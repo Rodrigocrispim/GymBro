@@ -67,7 +67,8 @@ O GymBro diferencia-se ao combinar ofertas com aprovação, suporte a grupos, us
   - Semana 12-14 (10/11-14/12): Versão final e 3ª entrega.
 - **Gráfico de Gantt**:
 <img src="https://github.com/Rodrigocrispim/GymBro/blob/main/entrega%201/grafico_gantt/gantt.png?raw=true" width=800 height=500>
-- **Metodologia**: Divisão de tarefas no click up, comunicação no discord e atualizações no GitHub.
+
+  **Metodologia:** Divisão de tarefas no click up, comunicação no discord e atualizações no GitHub.
 
 ## 10. Conclusão
 O projeto GymBro visa criar uma solução inovadora para motivar treinos sociais, com entregas progressivas até dezembro de 2025. Os próximos passos incluem validar o protótipo e expandir funcionalidades como chat, localização, recomendação de ofertas e notificações.
