@@ -70,9 +70,7 @@ O GymBro diferencia-se ao combinar ofertas com aprovação, suporte a grupos, us
 - **Metodologia**: Divisão de tarefas no click up, comunicação no discord e atualizações no GitHub.
 
 ## 10. Conclusão
-O projeto GymBro visa criar uma solução inovadora para motivar treinos sociais, com entregas progressivas até dezembro de 2025. Os próximos passos incluem validar o protótipo e expandir funcionalidades como chat e notificações.
+O projeto GymBro visa criar uma solução inovadora para motivar treinos sociais, com entregas progressivas até dezembro de 2025. Os próximos passos incluem validar o protótipo e expandir funcionalidades como chat, localização, recomendação de ofertas e notificações.
 
 ## 11. Bibliografia
-- Documentação oficial Kotlin: [kotlinlang.org](https://kotlinlang.org)
-- Guia Spring Boot: [spring.io](https://spring.io)
-- Tutoriais Android: [developer.android.com](https://developer.android.com)
+- Documentação MarkDown Syntax: [markdownguide.org](https://www.markdownguide.org/basic-syntax/)
