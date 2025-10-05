@@ -25,7 +25,6 @@ Pessoas entre 18 e 40 anos, incluindo extrovertidos que gostam de treinar em gru
 
 ## 6. Pesquisa de Mercado
 Foram analisadas apps semelhantes:
-- **Gymder**: Foco em swipe para encontrar parceiros de ginásio, mas sem grupos ou aprovação manual.
 - **Fit Buddy**: Matching por objetivos, mas sem integração de localização avançada.
 - **Tag Team**: Encontra parceiros fitness, mas falta gestão de candidaturas e UI moderna.
 
