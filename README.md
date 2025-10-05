@@ -57,7 +57,8 @@ O GymBro diferencia-se ao combinar ofertas com aprovação, suporte a grupos, us
 
 - **Poster:**
 
-![Poster](https://github.com/Rodrigocrispim/GymBro/blob/main/entrega%201/Poster/GymBro_Poster.png?raw=true)
+![Poster](<img width="707" height="1000" alt="image" src="https://github.com/user-attachments/assets/60851d5b-0125-4512-8e29-d921d0ab2de0" />
+)
 ## 9. Planeamento e Calendarização
 - **Plano de Trabalhos**: 
   - Semana 1 (23/09-05/10): Pesquisa, mockups e 1ª entrega.
