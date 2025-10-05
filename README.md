@@ -1,4 +1,4 @@
-# Proposta Inicial - Gym Bro
+ # Proposta Inicial - Gym Bro
 
 ## 1. Identificação
 - **Grupo**: Rodrigo Crispim, Nuno Franco, Rodrigo Suarez
@@ -53,9 +53,9 @@ O GymBro diferencia-se ao combinar ofertas com aprovação, suporte a grupos, us
 - **Arquitetura Proposta**: Cliente-servidor com API REST conectando app e BD.
 - **Mockups e Interfaces**: 
 
-![Loginpage](/Users/rodrigocrispim/Downloads/Login.png)
+![Login Page]([image-1.png](https://github.com/Rodrigocrispim/GymBro/blob/main/entrega%201/Mockups/Create%20offer.png?raw=true)) ![Landing Page]([image-2.png](https://github.com/Rodrigocrispim/GymBro/blob/main/entrega%201/Mockups/Landing%20page.png?raw=true)) ![Create Offer]([image-3.png](https://github.com/Rodrigocrispim/GymBro/blob/main/entrega%201/Mockups/Login.png?raw=true))
 
-
+- **Poster:**
 ## 9. Planeamento e Calendarização
 - **Plano de Trabalhos**: 
   - Semana 1 (23/09-05/10): Pesquisa, mockups e 1ª entrega.
@@ -63,7 +63,7 @@ O GymBro diferencia-se ao combinar ofertas com aprovação, suporte a grupos, us
   - Semana 6-11 (27/10-09/11): Refinamento e 2ª entrega.
   - Semana 12-14 (10/11-14/12): Versão final e 3ª entrega.
 - **Gráfico de Gantt**: [Insira aqui o gráfico exportado do ClickUp/Excel ou link].
-- **Metodologia**: Ágil, com sprints semanais e revisões no ClickUp.
+- **Metodologia**: Divisão de tarefas no click up, comunicação no discord e atualizações no GitHub.
 
 ## 10. Conclusão
 O projeto GymBro visa criar uma solução inovadora para motivar treinos sociais, com entregas progressivas até dezembro de 2025. Os próximos passos incluem validar o protótipo e expandir funcionalidades como chat e notificações.
