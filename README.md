@@ -66,7 +66,8 @@ O GymBro diferencia-se ao combinar ofertas com aprovação, suporte a grupos, us
   - Semana 2-5 (05/10-26/10): Desenvolvimento do protótipo (app, backend, BD).
   - Semana 6-11 (27/10-09/11): Refinamento e 2ª entrega.
   - Semana 12-14 (10/11-14/12): Versão final e 3ª entrega.
-- **Gráfico de Gantt**: [Insira aqui o gráfico exportado do ClickUp/Excel ou link].
+- **Gráfico de Gantt**:
+<img src="https://github.com/Rodrigocrispim/GymBro/blob/main/entrega%201/grafico_gantt/gantt.png?raw=true" width=800 height=500>
 - **Metodologia**: Divisão de tarefas no click up, comunicação no discord e atualizações no GitHub.
 
 ## 10. Conclusão
