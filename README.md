@@ -59,7 +59,28 @@ O GymBro diferencia-se ao combinar ofertas com aprovação, suporte a grupos, us
 - **Poster:**
 <img src="https://github.com/Rodrigocrispim/GymBro/blob/main/entrega%201/Poster/Encontra%20o%20teu%20Gym%20Bro%20filtrado%20por%20estilo,%20localiza%C3%A7%C3%A3o%20e%20experi%C3%AAncia...jpg?raw=true" width=300 height=600>
 
-## 9. Planeamento e Calendarização
+## 9. Documentação da API REST (v1.0)
+
+Esta é a primeira versão da documentação da API REST para a aplicação "Gym Bro". O objetivo desta API é servir de *backend* (Spring Boot) para a aplicação móvel (Kotlin).
+
+A API segue os princípios REST, utilizando verbos HTTP e JSON para a comunicação.
+
+
+### Módulo: Ofertas
+
+#### 1. Listar todas as Ofertas Abertas
+
+Este *endpoint* é público e devolve uma lista de todas as ofertas de treino que estão atualmente com o estado `ABERTA`. As ofertas `FECHADA` são automaticamente filtradas e não são devolvidas.
+
+**Método:** `GET`
+
+**URL:** `/api/ofertas`
+
+**URLs de Exemplo:**
+* **Local (para testes):** `http://localhost:8080/api/ofertas`
+* **Público (via ngrok):** `https://[o-teu-link-ngrok].ngrok-free.app/api/ofertas`
+
+## 10. Planeamento e Calendarização
 - **Plano de Trabalhos**: 
   - Semana 1 (23/09-05/10): Pesquisa, mockups e 1ª entrega.
   - Semana 2-5 (05/10-26/10): Desenvolvimento do protótipo (app, backend, BD).
@@ -70,8 +91,8 @@ O GymBro diferencia-se ao combinar ofertas com aprovação, suporte a grupos, us
 
   **Metodologia:** Divisão de tarefas no click up, comunicação no discord e atualizações no GitHub.
 
-## 10. Conclusão
+## 11. Conclusão
 O projeto GymBro visa criar uma solução inovadora para motivar treinos sociais, com entregas progressivas até dezembro de 2025. Os próximos passos incluem validar o protótipo e expandir funcionalidades como chat, localização, recomendação de ofertas e notificações.
 
-## 11. Bibliografia
+## 12. Bibliografia
 - Documentação MarkDown Syntax: [markdownguide.org](https://www.markdownguide.org/basic-syntax/)
