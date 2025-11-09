@@ -93,13 +93,10 @@ Este *endpoint* é público e devolve uma lista de todas as ofertas de treino qu
 
   **Metodologia:** Divisão de tarefas no click up, comunicação no discord e atualizações no GitHub.
 
-## 11. Conclusão
-O projeto GymBro visa criar uma solução inovadora para motivar treinos sociais, com entregas progressivas até dezembro de 2025. Os próximos passos incluem validar o protótipo e expandir funcionalidades como chat, localização, recomendação de ofertas e notificações.
-
-## 12. Bibliografia
+## 11. Bibliografia
 - Documentação MarkDown Syntax: [markdownguide.org](https://www.markdownguide.org/basic-syntax/)
 
-## 13. Dicionário de Dados (Modelo v2.2)
+## 12. Dicionário de Dados (Modelo v2.2)
 
 Este Dicionário de Dados detalha a estrutura do Modelo Entidade-Relação (MER) implementado na base de dados `find_partners_db`. O modelo foi otimizado para a aplicação focada em musculação (ex: Push, Pull, Legs) e segue o padrão `snake_case` (minúsculas) para nomes de tabelas e colunas.
 
@@ -253,7 +250,7 @@ A base de dados está estruturalmente dividida em quatro categorias:
 | `dia_id` | `INT` | **PK / FK** (para `dia_semana`) | Sim | O ID do dia da semana. |
 | `periodo_id` | `INT` | **PK / FK** (para `periodo_dia`) | Sim | O ID do período do dia. |
 
-## 14. Personas
+## 13. Personas
 1. **Persona n1**: João Martins, 21 anos, estuda Engenharia Informática no Porto. Entre aulas, projetos e horas a programar, o dia de João passa quase sempre sentado, acompanhado de café e fast-food. O espelho e o cansaço constante lembram-no de que precisa mudar, mas o sentimento de vergonha e a ideia de ser julgado pela sua aparência ao entrar no ginásio o bloqueavam de conquistar qualquer progresso.
 Depois de mais uma semana a adiar o início no ginásio, João vê um anúncio da app GymBro. Curioso com a ideia de encontrar um parceiro de treino, instala-a.
 Dentro da app, cria o seu perfil, partilha timidamente o seu objetivo: “Perder peso, ganhar massa muscular e criar uma rotina saudável” e que gostaria de um parceiro de treino para treinos de força . Em poucos minutos, recebe um “match” com Miguel um estudante de Educação Física, de 18 anos, habituado ao ginásio e disposto a ajudar iniciantes.
@@ -265,3 +262,8 @@ A sua fisioterapeuta recomenda reforçar o corpo no ginásio antes de regressar 
 Ao entrar na app, define o seu propósito: “Recuperar força e estabilidade para voltar ao futebol”. Em poucas horas, encontra um “match” com André, 29 anos, formado em desporto e também ex-lesionado no tornozelo, entendendo assim perfeitamente o que Ricardo está a sentir.
 Treino após treino, Ricardo sente-se mais forte e seguro. Depois de 10 semanas, volta ao relvado pela primeira vez para um treino leve. 
 O que era medo transforma-se em coragem. Ricardo não só regressa ao futebol, como descobre que pode inspirar outros atletas lesionados a não desistirem.
+
+<img src="https://github.com/Rodrigocrispim/GymBro/blob/main/entrega%201/Poster/Encontra%20o%20teu%20Gym%20Bro%20filtrado%20por%20estilo,%20localiza%C3%A7%C3%A3o%20e%20experi%C3%AAncia...jpg?raw=true" width=300 height=600>
+
+## 14. Conclusão
+O projeto GymBro visa criar uma solução inovadora para motivar treinos sociais, com entregas progressivas até dezembro de 2025. Os próximos passos incluem validar o protótipo e expandir funcionalidades como chat, localização, recomendação de ofertas e notificações.
