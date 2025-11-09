@@ -263,7 +263,7 @@ Ao entrar na app, define o seu propósito: “Recuperar força e estabilidade pa
 Treino após treino, Ricardo sente-se mais forte e seguro. Depois de 10 semanas, volta ao relvado pela primeira vez para um treino leve. 
 O que era medo transforma-se em coragem. Ricardo não só regressa ao futebol, como descobre que pode inspirar outros atletas lesionados a não desistirem.
 
-<img src="https://github.com/Rodrigocrispim/GymBro/blob/main/entrega%201/Poster/Encontra%20o%20teu%20Gym%20Bro%20filtrado%20por%20estilo,%20localiza%C3%A7%C3%A3o%20e%20experi%C3%AAncia...jpg?raw=true" width=300 height=600>
+![diagrama](https://github.com/Rodrigocrispim/GymBro/blob/main/entrega%201/Mockups/Login.png?raw=true)
 
 ## 14. Conclusão
 O projeto GymBro visa criar uma solução inovadora para motivar treinos sociais, com entregas progressivas até dezembro de 2025. Os próximos passos incluem validar o protótipo e expandir funcionalidades como chat, localização, recomendação de ofertas e notificações.
