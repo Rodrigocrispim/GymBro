@@ -99,7 +99,7 @@ O projeto GymBro visa criar uma solução inovadora para motivar treinos sociais
 ## 12. Bibliografia
 - Documentação MarkDown Syntax: [markdownguide.org](https://www.markdownguide.org/basic-syntax/)
 
-## Dicionário de Dados (Modelo v2.2)
+## 13. Dicionário de Dados (Modelo v2.2)
 
 Este Dicionário de Dados detalha a estrutura do Modelo Entidade-Relação (MER) implementado na base de dados `find_partners_db`. O modelo foi otimizado para a aplicação focada em musculação (ex: Push, Pull, Legs) e segue o padrão `snake_case` (minúsculas) para nomes de tabelas e colunas.
 
@@ -111,7 +111,7 @@ A base de dados está estruturalmente dividida em quatro categorias:
 
 ---
 
-### 13. Entidades de Domínio (Tabelas-Lista)
+### Entidades de Domínio (Tabelas-Lista)
 
 #### Tabela: `localizacao`
 **Descrição:** Armazena as localizações (concelhos e distritos) pré-definidas que um utilizador ou oferta pode ter.
