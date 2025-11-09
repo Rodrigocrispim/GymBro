@@ -1,0 +1,9 @@
+# Lixo do Java (Backend)
+/target/
+
+# Lixo do Kotlin (Frontend)
+/build/
+/.gradle/
+
+# Lixo do Mac
+.DS_Store
