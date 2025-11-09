@@ -27,6 +27,8 @@ Pessoas entre 18 e 40 anos, incluindo extrovertidos que gostam de treinar em gru
 Foram analisadas apps semelhantes:
 - **Fit Buddy**: Matching por objetivos, mas sem integração de localização avançada.
 - **Tag Team**: Encontra parceiros fitness, mas falta gestão de candidaturas e UI moderna.
+- **BlinkFIT**
+- **Sporpartner**
 
 O GymBro diferencia-se ao combinar ofertas com aprovação, suporte a grupos, uso de localização, recomendação e filtragem de ofertas.
 
@@ -250,3 +252,16 @@ A base de dados está estruturalmente dividida em quatro categorias:
 | `oferta_id` | `INT` | **PK / FK** (para `oferta`) | Sim | O ID da oferta. |
 | `dia_id` | `INT` | **PK / FK** (para `dia_semana`) | Sim | O ID do dia da semana. |
 | `periodo_id` | `INT` | **PK / FK** (para `periodo_dia`) | Sim | O ID do período do dia. |
+
+## 14. Personas
+1. **Persona n1**: João Martins, 21 anos, estuda Engenharia Informática no Porto. Entre aulas, projetos e horas a programar, o dia de João passa quase sempre sentado, acompanhado de café e fast-food. O espelho e o cansaço constante lembram-no de que precisa mudar, mas o sentimento de vergonha e a ideia de ser julgado pela sua aparência ao entrar no ginásio o bloqueavam de conquistar qualquer progresso.
+Depois de mais uma semana a adiar o início no ginásio, João vê um anúncio da app GymBro. Curioso com a ideia de encontrar um parceiro de treino, instala-a.
+Dentro da app, cria o seu perfil, partilha timidamente o seu objetivo: “Perder peso, ganhar massa muscular e criar uma rotina saudável” e que gostaria de um parceiro de treino para treinos de força . Em poucos minutos, recebe um “match” com Miguel um estudante de Educação Física, de 18 anos, habituado ao ginásio e disposto a ajudar iniciantes.
+Miguel envia-lhe uma mensagem motivadora e oferece-se para treinar com ele 2 vezes por semana. João sente confiança, porque percebe que não está sozinho nesta caminhada.
+Nos primeiros treinos, Miguel mostra-lhe os exercícios básicos, corrige a postura e celebra pequenas vitórias com ele. O que antes era motivo de ansiedade, tornar-se gratificante.
+Depois de 2 meses, João perdeu peso levando agora um estilo de vida saudavel. O ginásio deixou de ser um lugar assustador e tornou-se parte da sua rotina.
+2. **Persona n2**: Ricardo Silva, 23 anos, jogava futebol amador e tinha uma carreira muito promissora. Mas, após uma lesão no joelho durante um jogo, a sua rotina mudou drasticamente. Entre fisioterapia, limitações e medo de voltar a treinar, perdeu massa muscular e confiança.
+A sua fisioterapeuta recomenda reforçar o corpo no ginásio antes de regressar ao campo, mas Ricardo receia treinar sozinho. Numa pesquisa rápida na internet, encontra o GymBro e decide tentar.
+Ao entrar na app, define o seu propósito: “Recuperar força e estabilidade para voltar ao futebol”. Em poucas horas, encontra um “match” com André, 29 anos, formado em desporto e também ex-lesionado no tornozelo, entendendo assim perfeitamente o que Ricardo está a sentir.
+Treino após treino, Ricardo sente-se mais forte e seguro. Depois de 10 semanas, volta ao relvado pela primeira vez para um treino leve. 
+O que era medo transforma-se em coragem. Ricardo não só regressa ao futebol, como descobre que pode inspirar outros atletas lesionados a não desistirem.
