@@ -53,10 +53,14 @@ O GymBro diferencia-se ao combinar ofertas com aprovação, suporte a grupos, us
   - Ferramentas: GitHub, ClickUp, Figma, Discord.
 - **Arquitetura Proposta**: Cliente-servidor com API REST conectando app e BD.
 - **Mockups e Interfaces**: 
+<img width="375" height="812" alt="Sign up" src="https://github.com/user-attachments/assets/aa0ac3ac-184d-476d-b351-fa715a1cf91e" />
+<img width="188" height="406" alt="Login" src="https://github.com/user-attachments/assets/0d6ff972-ce7e-4823-8d0d-348ab4b92ace" />
+<img width="188" height="406" alt="Landing page" src="https://github.com/user-attachments/assets/8ddf6e76-5b9b-46ae-910b-645ae304b223" />
+<img width="188" height="406" alt="Create offer" src="https://github.com/user-attachments/assets/fc76a32f-48c8-47d8-908e-9e55316759b0" />
+<img width="188" height="406" alt="Perfil (1)" src="https://github.com/user-attachments/assets/5da046a1-9501-41c0-a198-18a425eeff5d" />
+<img width="188" height="406" alt="Aplications (1)" src="https://github.com/user-attachments/assets/e882694b-36e1-4e5e-8712-d91674976b7f" />
 
-![Login Page](https://github.com/Rodrigocrispim/GymBro/blob/main/entrega%201/Mockups/Login.png?raw=true)
-![image-2.png](https://github.com/Rodrigocrispim/GymBro/blob/main/entrega%201/Mockups/Landing%20page.png?raw=true)
-![Create Offer](https://github.com/Rodrigocrispim/GymBro/blob/main/entrega%201/Mockups/Create%20offer.png?raw=true)
+
 
 - **Poster:**
 <img src="https://github.com/Rodrigocrispim/GymBro/blob/main/entrega%201/Poster/Encontra%20o%20teu%20Gym%20Bro%20filtrado%20por%20estilo,%20localiza%C3%A7%C3%A3o%20e%20experi%C3%AAncia...jpg?raw=true" width=300 height=600>
