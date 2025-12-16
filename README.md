@@ -269,7 +269,66 @@ O que era medo transforma-se em coragem. Ricardo não só regressa ao futebol, c
 
 <img src="https://github.com/Rodrigocrispim/GymBro/blob/main/entrega%201/Poster/Encontra%20o%20teu%20Gym%20Bro%20filtrado%20por%20estilo,%20localiza%C3%A7%C3%A3o%20e%20experi%C3%AAncia...jpg?raw=true" width=300 height=600>
 
-##14. Funcionalidades nao implementadas-Chat
+## 14. Diagrama de Classes (Modelo de Domínio – Backend)
 
-## 15. Conclusão
+Esta secção resume as principais classes de domínio do backend e as relações entre elas.
+
+### Classe `Utilizador`
+
+| Atributo         | Tipo     | Descrição                                      |
+|------------------|----------|-----------------------------------------------|
+| `utilizador_id`  | Integer  | Identificador único do utilizador.           |
+| `email`          | String   | Email usado como username para login.        |
+| `password_hash`  | String   | Password encriptada (BCrypt).                |
+| `nome_completo`  | String   | Nome completo do utilizador.                 |
+
+### Classe `Oferta`
+
+| Atributo        | Tipo           | Descrição                                                         |
+|-----------------|----------------|--------------------------------------------------------------------|
+| `oferta_id`     | Integer        | Identificador único da oferta.                                    |
+| `titulo`        | String         | Título da oferta de treino.                                       |
+| `descricao`     | String         | Descrição detalhada da sessão/objetivo.                           |
+| `status_oferta` | StatusOferta   | Estado da oferta (`ABERTA`, `FECHADA`).                           |
+| `data_criacao`  | LocalDateTime  | Data/hora em que a oferta foi criada.                             |
+| `utilizador`    | Utilizador     | Criador da oferta (relação N:1 com `Utilizador`).                 |
+| `localizacao`   | Localizacao    | Localização onde o treino vai ocorrer.                            |
+| `nivelTreino`   | NivelTreino    | Nível de experiência desejado.                                    |
+| `tipoTreino`    | TipoTreino     | Tipo de treino (Push, Pull, Legs, etc.).                          |
+| `diaSemana`     | DiaSemana      | Dia da semana pretendido.                                         |
+| `periodoDia`    | PeriodoDia     | Período do dia (manhã, almoço, tarde, noite).                     |
+
+### Classe `Candidatura`
+
+| Atributo            | Tipo        | Descrição                                                         |
+|---------------------|------------|-------------------------------------------------------------------|
+| `candidatura_id`    | Integer     | Identificador único da candidatura.                               |
+| `oferta`            | Oferta      | Oferta à qual o utilizador se candidatou.                         |
+| `candidato`         | Utilizador  | Utilizador que se candidatou.                                     |
+| `status`            | String      | Estado da candidatura (`PENDENTE`, `ACEITE`, `REJEITADA`).        |
+| `comentario_inicial`| String      | Mensagem opcional enviada com a candidatura.                      |
+| `data_envio`        | LocalDateTime | Data/hora em que a candidatura foi submetida.                 |
+
+### Classes de Catálogo (Listas de Apoio)
+
+| Classe          | Atributos principais                          | Descrição                                     |
+|-----------------|-----------------------------------------------|-----------------------------------------------|
+| `Localizacao`   | `localizacao_id : Integer`, `distrito`, `concelho` | Lista de distritos/concelhos disponíveis. |
+| `NivelTreino`   | `nivel_id : Integer`, `nivel_nome : String`  | Níveis de experiência (Iniciante, etc.).     |
+| `ObjetivoFitness` | `objetivo_id : Integer`, `objetivo_nome : String` | Objetivos (Perda de peso, Massa, etc.). |
+| `DiaSemana`     | `dia_id : Integer`, `nome_dia : String`      | Dias da semana.                               |
+| `PeriodoDia`    | `periodo_id : Integer`, `periodo_nome : String` | Períodos do dia.                           |
+| `TipoTreino`    | `tipo_treino_id : Integer`, `nome : String`  | Tipos de treino (Push, Pull, Legs, ...).     |
+
+### Relações entre Classes
+
+- Um `Utilizador` **cria** várias `Oferta` (relação 1:N).  
+- Um `Utilizador` pode ter várias `Candidatura` como candidato (1:N).  
+- Uma `Oferta` pode receber várias `Candidatura` (1:N).  
+- Cada `Oferta` referencia exatamente um registo de cada catálogo: `Localizacao`, `NivelTreino`, `TipoTreino`, `DiaSemana`, `PeriodoDia`.
+
+
+## 15. Funcionalidades não implementadas-Chat
+
+## 16. Conclusão
 O projeto GymBro visa criar uma solução inovadora para motivar treinos sociais, com entregas progressivas até dezembro de 2025. Os próximos passos incluem validar o protótipo e expandir funcionalidades como chat, localização, recomendação de ofertas e notificações.
