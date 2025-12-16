@@ -100,159 +100,62 @@ Este *endpoint* é público e devolve uma lista de todas as ofertas de treino qu
 ## 11. Bibliografia
 - Documentação MarkDown Syntax: [markdownguide.org](https://www.markdownguide.org/basic-syntax/)
 
-## 12. Dicionário de Dados (Modelo v2.2)
+
+## 12. Dicionário de Dados (Atualizado)
 
 Este Dicionário de Dados detalha a estrutura do Modelo Entidade-Relação (MER) implementado na base de dados `find_partners_db`. O modelo foi otimizado para a aplicação focada em musculação (ex: Push, Pull, Legs) e segue o padrão `snake_case` (minúsculas) para nomes de tabelas e colunas.
 
 A base de dados está estruturalmente dividida em quatro categorias:
-1.  **Entidades de Domínio:** As "tabelas-lista" que contêm opções pré-definidas (ex: Localizações, Níveis).
-2.  **Entidade Principal:** A tabela `utilizador`, que armazena os dados de autenticação e perfil.
-3.  **Entidades Transacionais:** Tabelas que registam ações ou "eventos" (ex: `oferta`, `candidatura`).
-4.  **Entidades de Ligação:** As "tabelas-ponte" que resolvem relações Muitos-para-Muitos (N-para-M).
+1. **Entidades de Domínio:** As "tabelas-lista" que contêm opções pré-definidas (ex: Localizações, Níveis).
+2. **Entidade Principal:** A tabela `utilizador`, que armazena os dados de autenticação e perfil.
+3. **Entidades Transacionais:** Tabelas que registam ações ou "eventos" (ex: `oferta`, `candidatura`, `chat_mensagem`).
+4. **Entidades de Ligação:** As "tabelas-ponte" que resolvem relações Muitos-para-Muitos (N-para-M), como `utilizador_interesses` e `utilizador_disponibilidade`.
 
 ---
 
-### Entidades de Domínio (Tabelas-Lista)
+### 1. Entidades de Domínio (Tabelas-Lista)
 
 #### Tabela: `localizacao`
 **Descrição:** Armazena as localizações (concelhos e distritos) pré-definidas que um utilizador ou oferta pode ter.
 
-| Nome do Atributo | Tipo de Dados | Chave? | Obrigatório? | Descrição |
-| :--- | :--- | :--- | :--- | :--- |
-| `localizacao_id` | `INT` | **PK** | Sim | Identificador único (auto-incrementado) da localização. |
-| `distrito` | `VARCHAR(100)`| - | Sim | O nome do distrito (ex: "Lisboa"). |
-| `concelho` | `VARCHAR(100)`| - | Sim | O nome do concelho (ex: "Sintra"). |
+| Nome do Atributo | Tipo de Dados   | Chave? | Obrigatório? | Descrição |
+| :---             | :---            | :---   | :---         | :---      |
+| `localizacao_id` | `INT`           | **PK** | Sim          | Identificador único (auto-incrementado) da localização. |
+| `distrito`       | `VARCHAR(100)`  | -      | Sim          | O nome do distrito (ex: "Lisboa"). |
+| `concelho`       | `VARCHAR(100)`  | -      | Sim          | O nome do concelho (ex: "Sintra"). |
 
 #### Tabela: `nivel_treino`
-**Descrição:** Armazena os níveis de experiência pré-definidos (ex: Iniciante).
+**Descrição:** Armazena os níveis de experiência pré-definidos (ex: Iniciante, Intermédio, Avançado).
 
-| Nome do Atributo | Tipo de Dados | Chave? | Obrigatório? | Descrição |
-| :--- | :--- | :--- | :--- | :--- |
-| `nivel_id` | `INT` | **PK** | Sim | Identificador único (auto-incrementado) do nível. |
-| `nivel_nome` | `VARCHAR(45)` | UNIQUE | Sim | O nome descritivo do nível (ex: "Intermédio"). |
+| Nome do Atributo | Tipo de Dados  | Chave? | Obrigatório? | Descrição |
+| :---             | :---           | :---   | :---         | :---      |
+| `nivel_id`       | `INT`          | **PK** | Sim          | Identificador único (auto-incrementado) do nível. |
+| `nivel_nome`     | `VARCHAR(45)`  | UNIQUE | Sim          | O nome descritivo do nível (ex: "Intermédio"). |
 
 #### Tabela: `objetivo_fitness`
 **Descrição:** Armazena os objetivos de fitness pré-definidos (ex: Ganho de Massa Muscular).
 
-| Nome do Atributo | Tipo de Dados | Chave? | Obrigatório? | Descrição |
-| :--- | :--- | :--- | :--- | :--- |
-| `objetivo_id` | `INT` | **PK** | Sim | Identificador único (auto-incrementado) do objetivo. |
-| `objetivo_nome` | `VARCHAR(100)`| UNIQUE | Sim | O nome descritivo do objetivo (ex: "Perda de Peso"). |
+| Nome do Atributo | Tipo de Dados    | Chave? | Obrigatório? | Descrição |
+| :---             | :---             | :---   | :---         | :---      |
+| `objetivo_id`    | `INT`            | **PK** | Sim          | Identificador único (auto-incrementado) do objetivo. |
+| `objetivo_nome`  | `VARCHAR(100)`   | UNIQUE | Sim          | O nome descritivo do objetivo (ex: "Perda de Peso"). |
 
 #### Tabela: `tipo_treino`
-**Descrição:** Armazena os tipos de treino de musculação pré-definidos, conforme o foco do projeto (ex: Push, Pull).
+**Descrição:** Armazena os tipos de treino de musculação pré-definidos, conforme o foco do projeto (ex: Push, Pull, Legs).
 
-| Nome do Atributo | Tipo de Dados | Chave? | Obrigatório? | Descrição |
-| :--- | :--- | :--- | :--- | :--- |
-| `tipo_treino_id` | `INT` | **PK** | Sim | Identificador único (auto-incrementado) do tipo de treino. |
-| `nome` | `VARCHAR(50)` | UNIQUE | Sim | O nome do tipo de treino (ex: "Push", "Legs"). |
+| Nome do Atributo  | Tipo de Dados   | Chave? | Obrigatório? | Descrição |
+| :---              | :---            | :---   | :---         | :---      |
+| `tipo_treino_id`  | `INT`           | **PK** | Sim          | Identificador único (auto-incrementado) do tipo de treino. |
+| `nome`            | `VARCHAR(50)`   | UNIQUE | Sim          | O nome do tipo de treino (ex: "Push", "Legs"). |
 
 #### Tabela: `dia_semana`
 **Descrição:** Armazena os dias da semana para a funcionalidade de disponibilidade.
 
-| Nome do Atributo | Tipo de Dados | Chave? | Obrigatório? | Descrição |
-| :--- | :--- | :--- | :--- | :--- |
-| `dia_id` | `INT` | **PK** | Sim | Identificador único (1 = Segunda, 7 = Domingo). |
-| `nome_dia` | `VARCHAR(20)` | UNIQUE | Sim | O nome do dia (ex: "Segunda-feira"). |
+| Nome do Atributo | Tipo de Dados   | Chave? | Obrigatório? | Descrição |
+| :---             | :---            | :---   | :---         | :---      |
+| `dia_id`         | `INT`           | **PK** | Sim          | Identificador único (1 = Segunda, 7 = Domingo). |
+| `nome_dia`       | `VARCHAR(20)`   | UNIQUE | Sim          | O nome
 
-#### Tabela: `periodo_dia`
-**Descrição:** Armazena os períodos/horários do dia para a funcionalidade de disponibilidade.
-
-| Nome do Atributo | Tipo de Dados | Chave? | Obrigatório? | Descrição |
-| :--- | :--- | :--- | :--- | :--- |
-| `periodo_id` | `INT` | **PK** | Sim | Identificador único (auto-incrementado) do período. |
-| `periodo_nome` | `VARCHAR(50)` | UNIQUE | Sim | O nome do período (ex: "Manhã (08h-12h)"). |
-
----
-
-### 2. Entidade Principal
-
-#### Tabela: `utilizador`
-**Descrição:** Armazena toda a informação do utilizador, combinando dados de autenticação (login) e dados de perfil (preferências).
-
-| Nome do Atributo | Tipo de Dados | Chave? | Obrigatório? | Descrição |
-| :--- | :--- | :--- | :--- | :--- |
-| `utilizador_id` | `INT` | **PK** | Sim | Identificador único (auto-incrementado) do utilizador. |
-| `email` | `VARCHAR(255)`| UNIQUE | Sim | Email de login. Tem de ser único. |
-| `password_hash` | `VARCHAR(255)`| - | Sim | A password do utilizador (encriptada). |
-| `nome_completo` | `VARCHAR(150)`| - | Sim | O nome de exibição do utilizador. |
-| `biografia` | `TEXT` | - | Não | Texto descritivo opcional do perfil. |
-| `url_foto_perfil` | `VARCHAR(512)` | - | Não | O URL para a imagem de perfil (guardada externamente). |
-| `localizacao_id` | `INT` | **FK** (para `localizacao`)| Não | A localização preferida do utilizador (pode ser preenchida *após* o registo). |
-| `nivel_id` | `INT` | **FK** (para `nivel_treino`) | Não | O nível de treino preferido do utilizador. |
-| `objetivo_id` | `INT` | **FK** (para `objetivo_fitness`) | Não | O objetivo de fitness preferido do utilizador. |
-
----
-
-### 3. Entidades Transacionais (Ações)
-
-#### Tabela: `oferta`
-**Descrição:** Armazena a informação de uma "oferta" (anúncio) criada por um utilizador para encontrar um parceiro de treino.
-
-| Nome do Atributo | Tipo de Dados | Chave? | Obrigatório? | Descrição |
-| :--- | :--- | :--- | :--- | :--- |
-| `oferta_id` | `INT` | **PK** | Sim | Identificador único (auto-incrementado) da oferta. |
-| `criador_id` | `INT` | **FK** (para `utilizador`) | Sim | O ID do utilizador que criou a oferta. |
-| `tipo_treino_id` | `INT` | **FK** (para `tipo_treino`) | Sim | O tipo de treino específico desta oferta (ex: 'Legs'). |
-| `localizacao_id` | `INT` | **FK** (para `localizacao`) | Sim | A localização específica onde esta oferta é válida. |
-| `nivel_id` | `INT` | **FK** (para `nivel_treino`) | Sim | O nível de experiência procurado nesta oferta. |
-| `titulo` | `VARCHAR(100)`| - | Sim | O título do "anúncio" (ex: "Parceiro de Push"). |
-| `descricao` | `MEDIUMTEXT` | - | Não | Descrição detalhada opcional da oferta. |
-| `status_oferta` | `ENUM(...)` | - | Sim | O estado da oferta. ('ABERTA' ou 'FECHADA'). Default: 'ABERTA'. |
-| `data_criacao` | `DATETIME` | - | Sim | Data/hora de criação da oferta. Default: Agora. |
-
-#### Tabela: `candidatura`
-**Descrição:** Armazena um pedido (candidatura) feito por um utilizador a uma `oferta` específica.
-
-| Nome do Atributo | Tipo de Dados | Chave? | Obrigatório? | Descrição |
-| :--- | :--- | :--- | :--- | :--- |
-| `candidatura_id` | `INT` | **PK** | Sim | Identificador único (auto-incrementado) da candidatura. |
-| `oferta_id` | `INT` | **FK** (para `oferta`) | Sim | O ID da oferta à qual o utilizador se está a candidatar. |
-| `candidato_id` | `INT` | **FK** (para `utilizador`) | Sim | O ID do utilizador que está a fazer a candidatura. |
-| `status` | `ENUM(...)` | - | Sim | O estado da candidatura ('PENDENTE', 'ACEITE', 'REJEITADA'). Default: 'PENDENTE'. |
-| `comentario_inicial` | `TEXT` | - | Não | Mensagem opcional enviada com a candidatura. |
-| `data_envio` | `DATETIME` | - | Sim | Data/hora de envio. Default: Agora. |
-
-#### Tabela: `chat_mensagem`
-**Descrição:** (Funcionalidade Opcional) Armazena uma mensagem individual de chat. Cada `candidatura` funciona como uma "sala de chat".
-
-| Nome do Atributo | Tipo de Dados | Chave? | Obrigatório? | Descrição |
-| :--- | :--- | :--- | :--- | :--- |
-| `mensagem_id` | `INT` | **PK** | Sim | Identificador único (auto-incrementado) da mensagem. |
-| `candidatura_id` | `INT` | **FK** (para `candidatura`) | Sim | A "sala de chat" (candidatura) a que esta mensagem pertence. |
-| `remetente_id` | `INT` | **FK** (para `utilizador`) | Sim | O ID do utilizador que enviou a mensagem. |
-| `texto_mensagem`| `MEDIUMTEXT` | - | Sim | O conteúdo da mensagem. |
-| `data_envio` | `DATETIME` | - | Sim | Data/hora de envio. Default: Agora. |
-
----
-
-### 4. Entidades de Ligação (Tabelas-Ponte N-M)
-
-#### Tabela: `utilizador_interesses`
-**Descrição:** Tabela-ponte (N-para-M) que armazena os *vários* tipos de treino (ex: Push, Pull) que interessam a *um* utilizador.
-
-| Nome do Atributo | Tipo de Dados | Chave? | Obrigatório? | Descrição |
-| :--- | :--- | :--- | :--- | :--- |
-| `utilizador_id` | `INT` | **PK / FK** (para `utilizador`) | Sim | O ID do utilizador. |
-| `tipo_treino_id`| `INT` | **PK / FK** (para `tipo_treino`) | Sim | O ID do tipo de treino que interessa a esse utilizador. |
-
-#### Tabela: `utilizador_disponibilidade`
-**Descrição:** Tabela-ponte (N-para-M) que armazena os *vários* horários (pares de dia/período) em que *um* utilizador está disponível.
-
-| Nome do Atributo | Tipo de Dados | Chave? | Obrigatório? | Descrição |
-| :--- | :--- | :--- | :--- | :--- |
-| `utilizador_id` | `INT` | **PK / FK** (para `utilizador`) | Sim | O ID do utilizador. |
-| `dia_id` | `INT` | **PK / FK** (para `dia_semana`) | Sim | O ID do dia da semana. |
-| `periodo_id` | `INT` | **PK / FK** (para `periodo_dia`) | Sim | O ID do período do dia. |
-
-#### Tabela: `oferta_disponibilidade`
-**Descrição:** Tabela-ponte (N-para-M) que armazena os *vários* horários (pares de dia/período) em que *uma* oferta está disponível.
-
-| Nome do Atributo | Tipo de Dados | Chave? | Obrigatório? | Descrição |
-| :--- | :--- | :--- | :--- | :--- |
-| `oferta_id` | `INT` | **PK / FK** (para `oferta`) | Sim | O ID da oferta. |
-| `dia_id` | `INT` | **PK / FK** (para `dia_semana`) | Sim | O ID do dia da semana. |
-| `periodo_id` | `INT` | **PK / FK** (para `periodo_dia`) | Sim | O ID do período do dia. |
 
 ## 13. Personas
 1. **Persona n1**: João Martins, 21 anos, estuda Engenharia Informática no Porto. Entre aulas, projetos e horas a programar, o dia de João passa quase sempre sentado, acompanhado de café e fast-food. O espelho e o cansaço constante lembram-no de que precisa mudar, mas o sentimento de vergonha e a ideia de ser julgado pela sua aparência ao entrar no ginásio o bloqueavam de conquistar qualquer progresso.
