@@ -34,9 +34,8 @@ public class CandidaturaService {
         Oferta oferta = ofertaRepository.findById(request.getOfertaId())
                 .orElseThrow(() -> new RuntimeException("Oferta não encontrada"));
 
-        // --- REGRAS DE SEGURANÇA (Ouro) ---
+        // --- REGRAS DE SEGURANÇA  ---
 
-        // Regra 1: O Narcisista (Não pode candidatar-se à própria oferta)
         // Comparamos os IDs (atenção ao equals para Integer)
         if (oferta.getUtilizador().getUtilizador_id().equals(candidato.getUtilizador_id())) {
             throw new RuntimeException("Não podes candidatar-te à tua própria oferta!");

@@ -23,12 +23,12 @@ public class CandidaturaController {
             service.criarCandidatura(request);
             return ResponseEntity.ok("Candidatura enviada com sucesso!");
         } catch (RuntimeException e) {
-            // Se violar as regras (narcisista/desesperado), devolvemos erro 400 (Bad Request)
+    
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
 
-    // ... (código anterior)
+
 
     @PutMapping("/{id}/status")
     public ResponseEntity<String> atualizarStatus(@PathVariable Integer id, @RequestBody AtualizarStatusDTO request) {

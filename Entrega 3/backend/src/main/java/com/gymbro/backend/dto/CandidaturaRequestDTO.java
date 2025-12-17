@@ -2,7 +2,7 @@ package com.gymbro.backend.dto;
 
 public class CandidaturaRequestDTO {
     private Integer ofertaId;
-    private String comentario; // "Olá, sou o João e treino há 2 anos..."
+    private String comentario; 
 
     // Getters e Setters
     public Integer getOfertaId() { return ofertaId; }

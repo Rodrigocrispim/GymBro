@@ -43,7 +43,7 @@ public class AuthenticationService {
         // 4. Gerar o Token automaticamente para ele entrar logo
         var jwtToken = jwtService.generateToken(user.getUsername());
         
-        return new AuthenticationResponse(jwtToken);
+        return new AuthenticationResponse(jwtToken, user.getUtilizador_id());
     }
 
     // --- LÓGICA DE LOGIN ---
@@ -56,13 +56,13 @@ public class AuthenticationService {
                 )
         );
 
-        // 2. Se não deu erro acima, vamos buscar o utilizador à BD
+     
         var user = repository.findByEmail(request.getEmail())
-                .orElseThrow(); // (Aqui podias tratar o erro melhor, mas para já serve)
+                .orElseThrow(); 
 
         // 3. Geramos um novo token
         var jwtToken = jwtService.generateToken(user.getUsername());
 
-        return new AuthenticationResponse(jwtToken);
+        return new AuthenticationResponse(jwtToken, user.getUtilizador_id());
     }
 }

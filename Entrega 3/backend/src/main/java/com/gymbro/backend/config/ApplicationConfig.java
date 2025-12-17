@@ -17,12 +17,12 @@ public class ApplicationConfig {
 
     private final UtilizadorRepository repository;
 
-    // --- CONSTRUTOR MANUAL (Para não precisarmos do Lombok) ---
+
     public ApplicationConfig(UtilizadorRepository repository) {
         this.repository = repository;
     }
 
-    // 1. O "Detetive" de Utilizadores
+    
     @Bean
     public UserDetailsService userDetailsService() {
         return username -> repository.findByEmail(username)
@@ -38,7 +38,7 @@ public class ApplicationConfig {
         return authProvider;
     }
 
-    // 3. O "Gestor" (AuthenticationManager)
+
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception {
         return config.getAuthenticationManager();

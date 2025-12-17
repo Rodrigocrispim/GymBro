@@ -10,7 +10,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "utilizador")
-// AQUI ESTÁ A MUDANÇA: "implements UserDetails"
+
 public class Utilizador implements UserDetails {
 
     @Id
@@ -26,8 +26,7 @@ public class Utilizador implements UserDetails {
     @Column(nullable = false)
     private String nome_completo;
 
-    // ... (outros campos como biografia, localizacao, etc. podes manter ou adicionar depois)
-    // Para simplificar a autenticação agora, vamos focar nestes 3.
+ 
 
     // --- CONSTRUTORES ---
     public Utilizador() {
@@ -39,7 +38,7 @@ public class Utilizador implements UserDetails {
         this.nome_completo = nome_completo;
     }
 
-    // --- MÉTODOS OBRIGATÓRIOS DO SPRING SECURITY (UserDetails) ---
+   
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -76,6 +75,17 @@ public class Utilizador implements UserDetails {
     public boolean isEnabled() {
         return true; // O utilizador está ativo
     }
+    // Dentro de Utilizador.java
+private String biografia; // Mudar de bio para biografia
+
+// O nome do método TEM de ser getBiografia para o Java encontrar
+public String getBiografia() {
+    return biografia;
+}
+
+public void setBiografia(String biografia) {
+    this.biografia = biografia;
+}
 
     // --- GETTERS E SETTERS NORMAIS ---
     public Integer getUtilizador_id() { return utilizador_id; }
@@ -88,6 +98,5 @@ public class Utilizador implements UserDetails {
     public void setNome_completo(String nome_completo) { this.nome_completo = nome_completo; }
 
     public void setPassword_hash(String password_hash) { this.password_hash = password_hash; }
-    // Nota: O getPassword_hash não é estritamente necessário se já tens o getPassword(), 
-    // mas podes manter.
+   
 }

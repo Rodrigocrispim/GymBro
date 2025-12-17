@@ -21,7 +21,7 @@ public class OfertaController {
 
     private final OfertaService ofertaService;
     private final OfertaRepository ofertaRepository;
-    private final CandidaturaRepository candidaturaRepository; // <--- NOVO REPOSITÓRIO
+    private final CandidaturaRepository candidaturaRepository; 
 
     // Construtor atualizado com tudo o que precisamos
     public OfertaController(OfertaService ofertaService, 
@@ -37,16 +37,17 @@ public class OfertaController {
     public ResponseEntity<List<OfertaDTO>> getAllOfertas() {
         List<OfertaDTO> lista = ofertaRepository.findAll().stream()
             .map(oferta -> new OfertaDTO(
-                oferta.getOferta_id(),
-                oferta.getTitulo(),
-                oferta.getDescricao(),
-                oferta.getUtilizador().getNome_completo(),
-                oferta.getLocalizacao().getConcelho(),
-                oferta.getNivelTreino().getNivel_nome(),
-                oferta.getTipoTreino().getNome()
+                oferta.getOferta_id(),                     // 1. Integer
+                oferta.getTitulo(),                        // 2. String
+                oferta.getDescricao(),                     // 3. String
+                oferta.getUtilizador().getNome_completo(), // 4. String
+                oferta.getLocalizacao().getConcelho(),     // 5. String
+                oferta.getNivelTreino().getNivel_nome(),   // 6. String
+                oferta.getTipoTreino().getNome(),          // 7. String
+                oferta.getUtilizador().getUtilizador_id()  // 8. Integer (criadorId)
             ))
             .collect(Collectors.toList());
-            
+
         return ResponseEntity.ok(lista);
     }
 

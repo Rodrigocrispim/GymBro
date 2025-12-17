@@ -16,13 +16,10 @@ import java.util.function.Function;
 @Service
 public class JwtService {
 
-    // ESTA É A TUA CHAVE SECRETA.
-    // É como a assinatura do teu servidor. É usada para "selar" o token.
-    // (Esta string é um código aleatório de 256-bit)
+
     private static final String SECRET_KEY = "404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970";
 
-    // 1. Gerar o Token (O "Cartão de Acesso")
-    // Recebe o email (username) e cria um token válido por 24 horas.
+
     public String generateToken(String username) {
         return generateToken(new HashMap<>(), username);
     }

@@ -32,4 +32,10 @@ public class OfertaRequestDTO {
 
     public Integer getPeriodoDiaId() { return periodoDiaId; }
     public void setPeriodoDiaId(Integer periodoDiaId) { this.periodoDiaId = periodoDiaId; }
+    // Em OfertaRequestDTO.java
+private Integer userId; 
+
+public Integer getUserId() { return userId; }
+public void setUserId(Integer userId) { this.userId = userId; }
+
 }

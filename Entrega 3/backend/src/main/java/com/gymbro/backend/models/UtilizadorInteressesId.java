@@ -11,7 +11,7 @@ import jakarta.persistence.Column;
 @Embeddable
 public class UtilizadorInteressesId implements Serializable {
 
-    // Os nomes das colunas TÊM DE BATER CERTO com o teu SQL
+
     @Column(name = "utilizador_id")
     private Integer utilizadorId;
 

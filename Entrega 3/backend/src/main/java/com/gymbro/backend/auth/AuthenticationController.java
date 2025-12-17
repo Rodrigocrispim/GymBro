@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 @RestController
 @RequestMapping("/api/auth")
-@CrossOrigin(origins = "*") // Permitir que o Android fale connosco
+@CrossOrigin(origins = "*") 
 public class AuthenticationController {
 
     private final AuthenticationService service;

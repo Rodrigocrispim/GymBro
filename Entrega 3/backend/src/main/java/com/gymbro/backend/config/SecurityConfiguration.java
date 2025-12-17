@@ -16,7 +16,7 @@ public class SecurityConfiguration {
     private final JwtAuthenticationFilter jwtAuthFilter;
     private final AuthenticationProvider authenticationProvider;
 
-    // --- CONSTRUTOR MANUAL (Sem Lombok) ---
+ 
     public SecurityConfiguration(JwtAuthenticationFilter jwtAuthFilter, AuthenticationProvider authenticationProvider) {
         this.jwtAuthFilter = jwtAuthFilter;
         this.authenticationProvider = authenticationProvider;
@@ -30,10 +30,10 @@ public class SecurityConfiguration {
                 // Auth público
                 .requestMatchers("/api/auth/**").permitAll()
     
-                // Ofertas público: lista e candidaturas (temporário)
+                
                 .requestMatchers("/api/ofertas", "/api/ofertas/**").permitAll()
     
-                // O resto continua a precisar de JWT
+            
                 .anyRequest().authenticated()
             )
             .sessionManagement(sess -> sess.sessionCreationPolicy(SessionCreationPolicy.STATELESS))

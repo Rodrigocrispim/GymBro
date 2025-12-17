@@ -15,35 +15,28 @@ public class OfertaDTO {
     private String localizacaoNome; // Da tabela 'localizacao'
     private String nivelNome;       // Da tabela 'nivel_treino'
     private String tipoTreinoNome;  // Da tabela 'tipo_treino'
-
-    // NOTA: Para esta primeira entrega, NÃO vamos incluir a disponibilidade
-    // (ex: "Segunda de Manhã"), porque isso exige uma query MUITO mais
-    // complexa (GROUP BY / CONCAT). Vamos focar-nos no principal.
+    private Integer criadorId;
 
 
-    // --- CONSTRUTOR ---
-    // Este é o "molde" que o nosso Repository vai usar para encher o saco.
-    // A ordem dos parâmetros aqui TEM DE SER 100% IGUAL à ordem 
-    // da nossa query no Passo 5.
-    public OfertaDTO(Integer ofertaId, String titulo, String descricao, 
-                     String nomeCriador, String localizacaoNome, 
-                     String nivelNome, String tipoTreinoNome) {
-        this.ofertaId = ofertaId;
-        this.titulo = titulo;
-        this.descricao = descricao;
-        this.nomeCriador = nomeCriador;
-        this.localizacaoNome = localizacaoNome;
-        this.nivelNome = nivelNome;
-        this.tipoTreinoNome = tipoTreinoNome;
-    }
+public OfertaDTO(Integer ofertaId, String titulo, String descricao, String nomeCriador, 
+    String localizacaoNome, String nivelNome, String tipoTreinoNome, Integer criadorId) {
+this.ofertaId = ofertaId;
+this.titulo = titulo;
+this.descricao = descricao;
+this.nomeCriador = nomeCriador;
+this.localizacaoNome = localizacaoNome;
+this.nivelNome = nivelNome;
+this.tipoTreinoNome = tipoTreinoNome;
+this.criadorId = criadorId;
+}
 
-    // --- GETTERS ---
-    // O frontend precisa disto para ler os valores (o Spring usa-os para criar o JSON)
-    public Integer getOfertaId() { return ofertaId; }
-    public String getTitulo() { return titulo; }
-    public String getDescricao() { return descricao; }
-    public String getNomeCriador() { return nomeCriador; }
-    public String getLocalizacaoNome() { return localizacaoNome; }
-    public String getNivelNome() { return nivelNome; }
-    public String getTipoTreinoNome() { return tipoTreinoNome; }
+// Getters
+public Integer getOfertaId() { return ofertaId; }
+public String getTitulo() { return titulo; }
+public String getDescricao() { return descricao; }
+public String getNomeCriador() { return nomeCriador; }
+public String getLocalizacaoNome() { return localizacaoNome; }
+public String getNivelNome() { return nivelNome; }
+public String getTipoTreinoNome() { return tipoTreinoNome; }
+public Integer getCriadorId() { return criadorId; }
 }

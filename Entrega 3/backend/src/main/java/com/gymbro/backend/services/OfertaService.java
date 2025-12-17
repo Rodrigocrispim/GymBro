@@ -6,6 +6,8 @@ import com.gymbro.backend.repositories.*;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
+import com.gymbro.backend.models.StatusOferta;
+
 
 import java.time.LocalDateTime;
 
@@ -34,32 +36,33 @@ public class OfertaService {
     }
 
     public void criarOferta(OfertaRequestDTO request) {
-        // 1. Quem é o user?
-        String email = ((UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getUsername();
-        Utilizador criador = utilizadorRepository.findByEmail(email).orElseThrow();
-
-        // 2. Buscar Entidades
-        Localizacao local = localizacaoRepository.findById(request.getLocalizacaoId()).orElseThrow();
-        NivelTreino nivel = nivelTreinoRepository.findById(request.getNivelId()).orElseThrow();
-        TipoTreino tipo = tipoTreinoRepository.findById(request.getTipoTreinoId()).orElseThrow();
-        
-        // Buscar Dia e Periodo pelos IDs
-        DiaSemana dia = diaSemanaRepository.findById(request.getDiaSemanaId()).orElseThrow();
-        PeriodoDia periodo = periodoDiaRepository.findById(request.getPeriodoDiaId()).orElseThrow();
-
+        // 1. Quem é o criador? (Usando o ID enviado pelo Android)
+        Utilizador criador = utilizadorRepository.findById(request.getUserId())
+        .orElseThrow(() -> new RuntimeException("Utilizador não encontrado"));
+    
+// 2. Buscar Entidades de apoio
+Localizacao local = localizacaoRepository.findById(request.getLocalizacaoId()).orElseThrow();
+NivelTreino nivel = nivelTreinoRepository.findById(request.getNivelId()).orElseThrow();
+TipoTreino tipo = tipoTreinoRepository.findById(request.getTipoTreinoId()).orElseThrow();
+DiaSemana dia = diaSemanaRepository.findById(request.getDiaSemanaId()).orElseThrow();
+PeriodoDia periodo = periodoDiaRepository.findById(request.getPeriodoDiaId()).orElseThrow();
+    
         // 3. Criar Oferta
         Oferta novaOferta = new Oferta();
         novaOferta.setTitulo(request.getTitulo());
         novaOferta.setDescricao(request.getDescricao());
-        novaOferta.setUtilizador(criador);
+        
+        // A LINHA MAIS IMPORTANTE:
+        novaOferta.setUtilizador(criador); 
+        
         novaOferta.setLocalizacao(local);
         novaOferta.setNivelTreino(nivel);
         novaOferta.setTipoTreino(tipo);
-        novaOferta.setDiaSemana(dia);    // <--- Simples!
-        novaOferta.setPeriodoDia(periodo); // <--- Simples!
+        novaOferta.setDiaSemana(dia);
+        novaOferta.setPeriodoDia(periodo);
         novaOferta.setStatus_oferta(StatusOferta.ABERTA);
         novaOferta.setData_criacao(LocalDateTime.now());
-
+    
         ofertaRepository.save(novaOferta);
     }
 }

@@ -21,7 +21,6 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     private final JwtService jwtService;
     private final UserDetailsService userDetailsService;
 
-    // --- CONSTRUTOR MANUAL (Sem Lombok) ---
     public JwtAuthenticationFilter(JwtService jwtService, UserDetailsService userDetailsService) {
         this.jwtService = jwtService;
         this.userDetailsService = userDetailsService;
@@ -71,12 +70,11 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                         new WebAuthenticationDetailsSource().buildDetails(request)
                 );
 
-                // 8. FINALMENTE: Marcar o utilizador como "Autenticado" para este pedido!
                 SecurityContextHolder.getContext().setAuthentication(authToken);
             }
         }
         
-        // 9. Passar a batata quente ao próximo filtro
+      
         filterChain.doFilter(request, response);
     }
 }
